@@ -7,7 +7,29 @@ components:
   properties: {col_widths: '{}'}
   name: content_panel
   layout_properties: {slot: default}
-  components: []
+  components:
+  - name: bannerLbl
+    properties: {text: 'Hello
+
+        '}
+    type: Label
+    layout_properties: {grid_position: 'RTFBLC,KVCJHR'}
+  - name: AddABtn
+    properties: {text: 'AddABtn
+
+        '}
+    type: Button
+    layout_properties: {grid_position: 'LLNYXE,ZRQQFV'}
+    event_bindings: {click: AddABtn_click}
+  - name: DELletter
+    properties: {text: DELletter}
+    type: Button
+    layout_properties: {grid_position: 'STXCME,XQKVAF'}
+    event_bindings: {click: DELletter_click}
+  - name: map_1
+    properties: {}
+    type: GoogleMap
+    layout_properties: {grid_position: 'GFLJVZ,ZHQRDT'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
