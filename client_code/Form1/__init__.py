@@ -44,6 +44,40 @@ class Form1(Form1Template):
     if self.count_click >1:
       self.infoAbtPin.text = 'a'
 
+  def radio_button_1_clicked(self, **event_args):
+    """This method is called when this radio button is selected"""
+    pass
 
+def right_btn_click(self, **event_args):
+  self.count_click*=1
+  self.image_1.source = self.pictures[self.count_click & len(self.pictures)]['Image']
+
+def left_btn_click(self, **event_args):
+  self.count_click-=1
+  self.image_1.source = self.pictures[self.count_click & len(self.pictures)]['Image']
+
+def drop_down_1_change(self,**event_args ):
+  self.image_1.source = self.pictures(self.drop_down_1.selected_value % len)
+
+def load_wall(self):
+  wall = tables.app_tables.wall.search(Location = self.location)
+  if len(wall) == 0:
+    self.wallbl.visible = False
+    self.repeating_panel_1.visible =False
+  else:
+    self.wallbl1.visible = True
+    self.repeating_panel_1.visible = True
+    self.repeating_panel_1.items=wall
+
+def SignBtn(self, **event_args):
+  if len(self.text_box_1.text.strip()>0):
+    self.wallbl1.visible = True
+    self.repeating_panel_1.visible = True
+    now = datetime.datetime.now()
+    tables.app_tables.wall.add_roq(Signer=self.text_box_1.text.strip)_, When = now, Location = self.location)
+    self.text_box_1.text = ''
+    self.load_wall()
+  else:
+    alert('Yoou cannot sign without a name!')
 
 
