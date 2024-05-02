@@ -57,4 +57,18 @@ db_schema:
       admin_ui: {width: 200, order: 3}
       type: string
     title: Wall
+  locations_2:
+    client: none
+    server: full
+    columns:
+    - name: Lat
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: Lon
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: Location
+      admin_ui: {width: 200, order: 2}
+      type: string
+    title: Locations
 renamed: true
