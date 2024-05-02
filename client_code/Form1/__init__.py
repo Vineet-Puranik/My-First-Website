@@ -55,10 +55,10 @@ class Form1(Form1Template):
     def load_wall(self):  # Define load_wall method within the Form1 class
         wall = tables.app_tables.wall.search(Location=self.location)
         if len(wall) == 0:
-            self.wallbl.visible = False
+            self.wallLbl.visible = False
             self.repeating_panel_1.visible = False
         else:
-            self.wallbl1.visible = True
+            self.wallLbl.visible = True
             self.repeating_panel_1.visible = True
             self.repeating_panel_1.items = wall
 

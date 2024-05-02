@@ -65,7 +65,7 @@ components:
     type: TextBox
     layout_properties: {grid_position: 'GIOLMC,EKQNNY DNCCWT,MIAHXO'}
   - name: signBtn
-    properties: {text: Sign!}
+    properties: {text: Sign!, role: elevated-button, background: 'theme:Primary Container'}
     type: Button
     layout_properties: {grid_position: 'GIOLMC,EKQNNY ZAOSNQ,PSDSMV'}
 - name: label_1
