@@ -4,38 +4,43 @@ container:
   properties: {html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{"DUVCEV":30,"EKQNNY":30}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - name: bannerLbl
-    properties: {text: 'Hello
-
-        '}
-    type: Label
-    layout_properties: {grid_position: 'RTFBLC,KVCJHR'}
-  - name: AddABtn
-    properties: {text: 'AddABtn
-
-        '}
-    type: Button
-    layout_properties: {grid_position: 'LLNYXE,ZRQQFV'}
-    event_bindings: {click: AddABtn_click}
-  - name: DELletter
-    properties: {text: DELletter}
-    type: Button
-    layout_properties: {grid_position: 'STXCME,XQKVAF'}
-    event_bindings: {click: DELletter_click}
-  - name: repeating_panel_1
-    properties: {item_template: Form1.ItemTemplate1}
-    type: RepeatingPanel
-    layout_properties: {grid_position: 'GKIANL,GHLAOH'}
   - name: map_1
-    properties: {height: 174.3546142578125}
+    properties: {height: 254.72222900390625}
     type: GoogleMap
-    layout_properties: {grid_position: 'VMEPOA,OADBAY'}
+    layout_properties: {grid_position: 'LJXBQG,JPOZEF'}
     event_bindings: {bounds_changed: map_1_bounds_changed}
-- type: FlowPanel
-  properties: {}
-  name: navbar_links
-  layout_properties: {slot: nav-right}
+  - name: left_click
+    properties: {text: '', align: center, background: 'theme:Primary Container', visible: true,
+      enabled: true, role: elevated-button, icon: 'fa:arrow-circle-o-left', icon_align: left}
+    type: Button
+    layout_properties: {grid_position: 'GIOLMC,DUVCEV EJQFBN,CKQUIO'}
+    data_bindings: []
+    event_bindings: {click: left_click_click}
+  - name: image_1
+    properties: {}
+    type: Image
+    layout_properties: {grid_position: 'GIOLMC,DUVCEV QQUBZO,UZGIVZ'}
+  - name: right_click
+    properties: {text: '', background: 'theme:Secondary Container', role: elevated-button,
+      icon: 'fa:arrow-circle-o-right'}
+    type: Button
+    layout_properties: {grid_position: 'GIOLMC,DUVCEV ZLHTWJ,IPLBID'}
+    data_bindings:
+    - {property: border, code: 'self.item['''']', writeback: false}
+    event_bindings: {click: button_2_click}
+  - name: label_2
+    properties: {text: 'Comments:', font_size: 24}
+    type: Label
+    layout_properties: {grid_position: 'GIOLMC,DUVCEV CYEJEK,ZARDSG'}
+  - name: load_wall
+    properties: {item_template: Form1.ItemTemplate1, spacing_above: small}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY MHHTPZ,RWWJDC'}
+- name: label_1
+  properties: {text: Vineet Puranik's Review of Oak Tree's}
+  type: Label
+  layout_properties: {slot: title}

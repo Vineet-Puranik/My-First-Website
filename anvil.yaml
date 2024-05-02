@@ -10,9 +10,51 @@ runtime_options: {version: 2, client_version: '3', server_version: python3-sandb
   server_spec: null}
 startup_form: Form1
 db_schema:
-  table_1:
+  locations:
     client: none
     server: full
-    columns: []
-    title: Table 1
+    columns:
+    - name: Lat
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: Lon
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: Name
+      admin_ui: {width: 200, order: 2}
+      type: string
+    title: Locations
+  images:
+    client: none
+    server: full
+    columns:
+    - name: Location
+      admin_ui: {width: 200, order: 0}
+      type: link_single
+      target: locations
+    - name: Image
+      admin_ui: {width: 200, order: 1}
+      type: media
+    - name: Description
+      admin_ui: {width: 200, order: 2}
+      type: string
+    title: Images
+  wall:
+    client: none
+    server: full
+    columns:
+    - name: Signer
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: When
+      admin_ui: {width: 200, order: 1}
+      type: datetime
+    - name: Location
+      admin_ui: {width: 200, order: 2}
+      type: link_single
+      target: locations
+    - name: Comment
+      admin_ui: {width: 200, order: 3}
+      type: string
+    title: Wall
 renamed: true
