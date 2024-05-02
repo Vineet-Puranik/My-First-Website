@@ -13,33 +13,61 @@ components:
     type: GoogleMap
     layout_properties: {grid_position: 'LJXBQG,JPOZEF'}
     event_bindings: {bounds_changed: map_1_bounds_changed}
-  - name: left_click
+  - name: left_btn
     properties: {text: '', align: center, background: 'theme:Primary Container', visible: true,
       enabled: true, role: elevated-button, icon: 'fa:arrow-circle-o-left', icon_align: left}
     type: Button
     layout_properties: {grid_position: 'GIOLMC,DUVCEV EJQFBN,CKQUIO'}
     data_bindings: []
-    event_bindings: {click: left_click_click}
+    event_bindings: {click: left_btn_click}
   - name: image_1
     properties: {}
     type: Image
     layout_properties: {grid_position: 'GIOLMC,DUVCEV QQUBZO,UZGIVZ'}
-  - name: right_click
+  - name: right_btn
     properties: {text: '', background: 'theme:Secondary Container', role: elevated-button,
       icon: 'fa:arrow-circle-o-right'}
     type: Button
     layout_properties: {grid_position: 'GIOLMC,DUVCEV ZLHTWJ,IPLBID'}
     data_bindings:
     - {property: border, code: 'self.item['''']', writeback: false}
-    event_bindings: {click: button_2_click}
-  - name: label_2
+    event_bindings: {click: right_btn_click}
+  - name: wallLbl
     properties: {text: 'Comments:', font_size: 24}
     type: Label
     layout_properties: {grid_position: 'GIOLMC,DUVCEV CYEJEK,ZARDSG'}
-  - name: load_wall
+  - name: repeating_panel_1
     properties: {item_template: Form1.ItemTemplate1, spacing_above: small}
     type: RepeatingPanel
-    layout_properties: {grid_position: 'GIOLMC,EKQNNY MHHTPZ,RWWJDC'}
+    layout_properties: {grid_position: 'GIOLMC,DUVCEV XHMFTU,YKSFOW'}
+  - name: infoAbtPin
+    properties: {visible: false}
+    type: Label
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY FFZTVW,BAMAEW'}
+  - name: desc
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY GYGBFJ,JBLUKE'}
+  - name: label_3
+    properties: {text: Add a comment!, font_size: 24}
+    type: Label
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY KIKWBO,BYGASW'}
+  - name: text_box_1
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY NLGCMV,GTPAOM'}
+  - name: label_4
+    properties: {text: Name}
+    type: Label
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY NLGCMV,JFTYEC'}
+  - name: text_box_2
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY DNCCWT,MIAHXO'}
+  - name: signBtn
+    properties: {text: Sign!}
+    type: Button
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY ZAOSNQ,PSDSMV'}
 - name: label_1
   properties: {text: Vineet Puranik's Review of Oak Tree's}
   type: Label
