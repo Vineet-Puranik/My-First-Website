@@ -21,7 +21,7 @@ components:
     data_bindings: []
     event_bindings: {click: left_btn_click}
   - name: image_1
-    properties: {}
+    properties: {height: 330.011474609375}
     type: Image
     layout_properties: {grid_position: 'GIOLMC,DUVCEV QQUBZO,UZGIVZ'}
   - name: right_btn
@@ -32,14 +32,6 @@ components:
     data_bindings:
     - {property: border, code: 'self.item['''']', writeback: false}
     event_bindings: {click: right_btn_click}
-  - name: wallLbl
-    properties: {text: 'Comments:', font_size: 24}
-    type: Label
-    layout_properties: {grid_position: 'GIOLMC,DUVCEV CYEJEK,ZARDSG'}
-  - name: repeating_panel_1
-    properties: {item_template: Form1.ItemTemplate1, spacing_above: small}
-    type: RepeatingPanel
-    layout_properties: {grid_position: 'GIOLMC,DUVCEV XHMFTU,YKSFOW'}
   - name: infoAbtPin
     properties: {visible: false}
     type: Label
@@ -68,7 +60,18 @@ components:
     properties: {text: Sign!, role: elevated-button, background: 'theme:Primary Container'}
     type: Button
     layout_properties: {grid_position: 'GIOLMC,EKQNNY ZAOSNQ,PSDSMV'}
+  - name: wallLbl
+    properties: {text: 'Comments:', font_size: 24, visible: true}
+    type: Label
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY MEIIHO,DYDGMR'}
+  - name: repeating_panel_1
+    properties: {item_template: Form1.ItemTemplate1, spacing_above: small}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'GIOLMC,EKQNNY QWNMRH,ISCFPW'}
 - name: label_1
-  properties: {text: Vineet Puranik's Review of Oak Tree's}
+  properties: {role: display, align: center, foreground: '', text: Vineet Puranik's Review of Oak Tree's,
+    font_size: 45, icon_align: top, italic: false, background: 'theme:Primary Container',
+    bold: true, underline: true, icon: ''}
   type: Label
   layout_properties: {slot: title}
+  data_bindings: []

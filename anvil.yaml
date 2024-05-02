@@ -58,7 +58,7 @@ db_schema:
       type: string
     title: Wall
   locations_2:
-    client: none
+    client: full
     server: full
     columns:
     - name: Lat

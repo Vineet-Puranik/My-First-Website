@@ -14,7 +14,7 @@ class Form1(Form1Template):
         self.map_1.zoom = 15
         self.map_1.clickable_icons = False
         self.map_1.fullscreen_control = False
-        pins = tables.app_tables.locations.search()
+        pins = tables.app_tables.locations_2.search()
         self.markerList = []
         ind = 0
         for pin in pins:
@@ -52,15 +52,15 @@ class Form1(Form1Template):
         self.image_1.source = self.pictures[self.count_click % len(self.pictures)]['Image']
         self.desc.text = self.pictures[self.count_click % len(self.pictures)]['Description']
 
-    def load_wall(self):  # Define load_wall method within the Form1 class
+    def load_wall(self):
         wall = tables.app_tables.wall.search(Location=self.location)
         if len(wall) == 0:
-            self.wallLbl.visible = False
-            self.repeating_panel_1.visible = False
+          self.wallLbl.visible = False
+          self.repeating_panel_1.visible = False
         else:
-            self.wallLbl.visible = True
-            self.repeating_panel_1.visible = True
-            self.repeating_panel_1.items = wall
+          self.wallLbl.visible = True
+          self.repeating_panel_1.visible = True
+          self.repeating_panel_1.items = wall
 
     def signBtn_click(self, **event_args):
         if len(self.text_box_1.text.strip()) > 0:
@@ -72,3 +72,5 @@ class Form1(Form1Template):
             self.load_wall()
         else:
             alert('You cannot sign without a name!')
+
+
