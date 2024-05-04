@@ -25,22 +25,22 @@ class Form1(Form1Template):
             ind += 1
 
     def marker_click(self, sender, **properties):
-     self.infoAbtPin.visible = True
-     self.desc.visible = True
-     elf.count_click += 1
-     self.infoAbtPin.text = 'You have clicked a pin ' + str(self.count_click) + ' time'
-     if self.count_click > 1:
-       self.infoAbtPin.text += 's'
-      self.infoAbtPin.text += '\nThis pin\'s location is ' + str(sender.tag['Lat']) + ' North, ' + str(sender.tag['Lon']) + ' West'
-      self.infoAbtPin.text += '\nIt is called ' + sender.tag['Name']
-     self.image_1.visible = True
-     self.right_btn.visible = True
-     self.left_btn.visible = True
-     self.pictures = tables.app_tables.images.search(Location=sender.tag)
-     self.location = sender.tag
-     self.image_1.source = self.pictures[self.count_click % len(self.pictures)]['Image']
-     self.desc.text = self.pictures[self.count_click % len(self.pictures)]['Description']
-     self.load_wall()  # Call the load_wall method
+        self.infoAbtPin.visible = True
+        self.desc.visible = True
+        self.count_click += 1
+        self.infoAbtPin.text = 'You have clicked a pin ' + str(self.count_click) + ' time'
+        if self.count_click > 1:
+            self.infoAbtPin.text += 's'
+            self.infoAbtPin.text += '\nThis pin\'s location is ' + str(sender.tag['Lat']) + ' North, ' + str(sender.tag['Lon']) + ' West'
+            self.infoAbtPin.text += '\nIt is called ' + sender.tag['Name']
+        self.image_1.visible = True
+        self.right_btn.visible = True
+        self.left_btn.visible = True
+        self.pictures = tables.app_tables.images.search(Location=sender.tag)
+        self.location = sender.tag
+        self.image_1.source = self.pictures[self.count_click % len(self.pictures)]['Image']
+        self.desc.text = self.pictures[self.count_click % len(self.pictures)]['Description']
+        self.load_wall()  # Call the load_wall method
 
     def left_btn_click(self, **event_args):
         self.count_click -= 1
@@ -55,12 +55,12 @@ class Form1(Form1Template):
     def load_wall(self):
         wall = tables.app_tables.wall.search(Location=self.location)
         if len(wall) == 0:
-          self.wallLbl.visible = False
-          self.repeating_panel_1.visible = False
+            self.wallLbl.visible = False
+            self.repeating_panel_1.visible = False
         else:
-          self.wallLbl.visible = True
-          self.repeating_panel_1.visible = True
-          self.repeating_panel_1.items = wall
+            self.wallLbl.visible = True
+            self.repeating_panel_1.visible = True
+            self.repeating_panel_1.items = wall
 
     def signBtn_click(self, **event_args):
         if len(self.text_box_1.text.strip()) > 0:
@@ -72,5 +72,3 @@ class Form1(Form1Template):
             self.load_wall()
         else:
             alert('You cannot sign without a name!')
-
-
