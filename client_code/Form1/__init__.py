@@ -42,33 +42,53 @@ class Form1(Form1Template):
     self.desc.text = self.pictures[self.count_click % len(self.pictures)]['Description']
     self.load_wall() 
 
+  def text_box_1_pressed_enter(self, **event_args):
+    pass
+
+  def text_box_2_pressed_enter(self, **event_args):
+    self.signBtn_click()
+  
+  def signBtn_click(self, **event_args):
+    name = self.text_box_1.text.strip()
+    comment = self.text_box_2.text.strip()
+
+    if len(name) and len(comment) > 0:
+      self.wallLbl.visible = False
+      self.repeating_panel_1.visible = False
+        #now = datetime.datetime.now()
+      tables.app_tables.wall.add_row(Signer=self.text_box_1.text.strip(), When=datetime.now(), Location = self.location, Comment=self.text_box_2.text)
+      self.text_box_1.text = ''
+      self.text_box_2.text = ''
+      self.load_wall()
+    else:
+      alert('You cannot comment without a name!')
+
+  def load_wall(self):
+    wall = tables.app_tables.wall.search(Location=self.location)
+    if len(wall) == 0:
+      self.wallLbl.visible = True
+      self.repeating_panel_1.visible = True
+    else:
+      self.wallLbl.visible = True
+      self.repeating_panel_1.visible = True
+      self.repeating_panel_1.items = wall
+
   def left_btn_click(self, **event_args):
-      self.count_click -= 1
-      self.image_1.source = self.pictures[self.count_click % len(self.pictures)]['Image']
-      self.desc.text = self.pictures[self.count_click % len(self.pictures)]['Description']
+    self.count_click -= 1
+    self.image_1.source = self.pictures[self.count_click % len(self.pictures)]['Image']
+    self.desc.text = self.pictures[self.count_click % len(self.pictures)]['Description']
 
   def right_btn_click(self, **event_args):
     self.count_click += 1
     self.image_1.source = self.pictures[self.count_click % len(self.pictures)]['Image']
     self.desc.text = self.pictures[self.count_click % len(self.pictures)]['Description']
 
-  def load_wall(self):
-    wall = tables.app_tables.wall.search(Location=self.location)
-    if len(wall) == 0:
-      self.wallLbl.visible = False
-      self.repeating_panel_1.visible = False
-    else:
-      self.wallLbl.visible = True
-      self.repeating_panel_1.visible = True
-      self.repeating_panel_1.items = wall
 
-  def signBtn_click(self, **event_args):
-    if len(self.text_box_1.text.strip()) > 0:
-      self.wallLbl.visible = True
-      self.repeating_panel_1.visible = True
-      tables.app_tables.wall.add_row(Signer=self.text_box_1.text.strip(), When=datetime.now(), Location=self.location, Comment=self.text_box_2.text)
-      self.text_box_1.text = ''
-      self.text_box_2.text = ''
-      self.load_wall()
-    else:
-      alert('You cannot sign without a name!')
+
+
+ 
+  
+ 
+
+
+
