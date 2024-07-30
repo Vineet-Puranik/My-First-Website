@@ -14,8 +14,7 @@ components:
     layout_properties: {grid_position: 'LJXBQG,JPOZEF'}
     event_bindings: {bounds_changed: map_1_bounds_changed}
   - name: left_btn
-    properties: {text: '', align: center, background: 'theme:Primary Container', visible: true,
-      enabled: true, role: elevated-button, icon: 'fa:arrow-circle-o-left', icon_align: left}
+    properties: {text: '', align: center, background: 'theme:Primary Container', visible: true, enabled: true, role: elevated-button, icon: 'fa:arrow-circle-o-left', icon_align: left}
     type: Button
     layout_properties: {grid_position: 'GIOLMC,DUVCEV EJQFBN,CKQUIO'}
     data_bindings: []
@@ -25,8 +24,7 @@ components:
     type: Image
     layout_properties: {grid_position: 'GIOLMC,DUVCEV QQUBZO,UZGIVZ'}
   - name: right_btn
-    properties: {text: '', background: 'theme:Secondary Container', role: elevated-button,
-      icon: 'fa:arrow-circle-o-right'}
+    properties: {text: '', background: 'theme:Secondary Container', role: elevated-button, icon: 'fa:arrow-circle-o-right'}
     type: Button
     layout_properties: {grid_position: 'GIOLMC,DUVCEV ZLHTWJ,IPLBID'}
     data_bindings:
@@ -68,9 +66,7 @@ components:
     type: RepeatingPanel
     layout_properties: {grid_position: 'GIOLMC,EKQNNY VASITN,CBJZEV'}
 - name: label_1
-  properties: {role: display, align: center, foreground: '', text: Vineet Puranik's Review of Oak Tree's,
-    font_size: 45, icon_align: top, italic: false, background: 'theme:Primary Container',
-    bold: true, underline: true, icon: ''}
+  properties: {role: display, align: center, foreground: '', text: Vineet Puranik's Review of Oak Tree's, font_size: 45, icon_align: top, italic: false, background: 'theme:Primary Container', bold: true, underline: true, icon: ''}
   type: Label
   layout_properties: {slot: title}
   data_bindings: []
